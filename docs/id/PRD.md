@@ -59,8 +59,8 @@
 ## 4. Ruang Lingkup (Scope)
 
 ### 4.1 In-Scope (11 Fitur Inti)
-1. **Pengecekan Birth Chart Lengkap:** Metode Barat (*Tropical*) & India (*Vedic/Sidereal*).
-2. **Visualisasi Bagan Ganda:** Roda Sirkular Barat 360° & Bagan Kotak Tradisional Weda (*South/North Indian*).
+1. **Pengecekan Birth Chart Fleksibel:** Opsi metode Barat (*Tropical*), India (*Vedic/Sidereal*), atau Keduanya sekaligus.
+2. **Visualisasi Bagan Fleksibel:** Opsi tampilan Roda Sirkular Barat 360°, Bagan Kotak Tradisional Weda (*South/North Indian*), atau Keduanya berdampingan.
 3. **Penyimpanan Birth Chart:** Database permanen untuk menyimpan dan mengelola profil multi-pengguna.
 4. **Alat Bantu Jam Lahir Kurang Pasti:** Slider dinamis untuk melihat pergeseran Lagna/Rumah secara real-time.
 5. **Mesin Transit Bolak-Balik Waktu:** Navigasi hari ini, masa lalu, dan masa depan via Slider, Kalender, dan Aspect Hit Scanner.
@@ -82,19 +82,22 @@
 
 ### User Stories & Acceptance Criteria
 
-#### Fitur 1: Pengecekan Birth Chart Lengkap (2 Metode)
-* **User Story:** *Sebagai pengguna, saya ingin menghitung chart kelahiran saya menggunakan metode Barat dan India sekaligus, agar saya memperoleh perspektif psikologis dan takdir secara utuh.*
+#### Fitur 1: Pengecekan Birth Chart Fleksibel (Barat, India, atau Keduanya)
+* **User Story:** *Sebagai pengguna, saya ingin bebas memilih untuk menggunakan metode Barat saja, metode India saja, atau keduanya sekaligus, agar hasil analisis dan antarmuka tepat sesuai tradisi yang saya minati.*
 * **Acceptance Criteria:**
-  - [ ] Sistem menghitung 10 planet utama + Rahu/Ketu dengan presisi bujur ekliptika.
-  - [ ] Menghasilkan Ascendant (Lagna) dan sistem rumah (Placidus & Whole Sign).
-  - [ ] Menghasilkan Nakshatra, Pada, Sub-Lord KP, dan siklus 4 lapis Vimshottari Dasha (MD, AD, PD, SD) pada sisi Sidereal.
-  - [ ] Menyediakan sakelar instan untuk beralih antara kerangka Tropikal dan Sidereal (Lahiri).
+  - [ ] Pengguna disediakan sakelar/pilihan preferensi kalkulasi: **Hanya Barat (Tropical)**, **Hanya India (Vedic/Sidereal)**, atau **Keduanya (Dual Mode)**.
+  - [ ] Sistem menghitung 10 planet utama + Rahu/Ketu dengan presisi bujur ekliptika tinggi.
+  - [ ] Jika Barat aktif: Menghasilkan Ascendant dan sistem rumah (Placidus & Whole Sign) serta aspek geometris.
+  - [ ] Jika India aktif: Menghasilkan posisi Sidereal (Ayanamsha Lahiri), Nakshatra, Pada, Sub-Lord KP, martabat planet, dan hierarki 4 lapis Vimshottari Dasha (MD, AD, PD, SD).
+  - [ ] Jika Keduanya aktif: Menyajikan komputasi kedua sistem secara sinkron dan berdampingan.
+  - [ ] Pengguna dapat beralih opsi metode kapan saja tanpa perlu menginput ulang data kelahiran.
 
-#### Fitur 2: Visualisasi Bagan Zodiak Ganda
-* **User Story:** *Sebagai pengguna, saya ingin melihat bagan kelahiran dalam bentuk visual yang rapi dan interaktif, agar mudah membaca posisi planet.*
+#### Fitur 2: Visualisasi Bagan Fleksibel (Roda Barat, Kotak Weda, atau Keduanya)
+* **User Story:** *Sebagai pengguna, saya ingin visualisasi bagan yang muncul di layar menyesuaikan dengan metode yang saya pilih (hanya roda Barat, hanya kotak Weda, atau keduanya berdampingan), agar tampilan rapi dan tidak membingungkan.*
 * **Acceptance Criteria:**
-  - [ ] Merender Roda Sirkular Barat 360° lengkap dengan garis koneksi aspek geometris.
-  - [ ] Merender Bagan Kotak Tradisional Weda (format India Selatan dan/atau India Utara).
+  - [ ] Jika mode Barat dipilih: Merender Roda Sirkular Barat 360° interaktif dengan garis aspek geometris.
+  - [ ] Jika mode India dipilih: Merender Bagan Kotak Tradisional Weda (format India Selatan atau India Utara).
+  - [ ] Jika mode Keduanya dipilih: Merender kedua visualisasi bagan berdampingan atau dalam tampilan tab (*toggle view*).
   - [ ] Setiap planet pada grafik visual dapat di-klik untuk menampilkan tabel data derajat, kecepatan, dan status retrograde.
 
 #### Fitur 3: Penyimpanan Birth Chart (*Storage*)

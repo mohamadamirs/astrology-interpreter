@@ -59,8 +59,8 @@
 ## 4. Scope
 
 ### 4.1 In-Scope (11 Core Features)
-1. **Dual Complete Birth Chart Analysis:** Comprehensive calculations across Western (*Tropical*) and Indian (*Vedic/Sidereal*) traditions.
-2. **Dual Visual Chart Rendering:** 360-degree Western Circular Wheel & Traditional Vedic Grid Chart (*South/North Indian*).
+1. **Flexible Birth Chart Analysis:** Optional selection of Western (*Tropical*), Indian (*Vedic/Sidereal*), or Both traditions simultaneously.
+2. **Flexible Visual Chart Rendering:** Configurable display of 360-degree Western Circular Wheel, Traditional Vedic Grid Chart (*South/North Indian*), or Both side-by-side.
 3. **Persistent Birth Chart Storage:** Local and server-side database storage to manage multi-user profiles.
 4. **Dynamic Birth Time Adjuster (*Rectification Slider*):** Real-time time-shift slider to inspect instant shifts in Lagna and house cusps.
 5. **Time-Traveling Transit Engine:** Bidirectional navigation across today, past history, and future dates via Slider, Calendar, and Aspect Hit Scanner.
@@ -82,19 +82,22 @@
 
 ### User Stories & Acceptance Criteria
 
-#### Feature 1: Complete Birth Chart Analysis (Dual-Method)
-* **User Story:** *As a user, I want to calculate my birth chart using both Western and Indian systems simultaneously, so that I can gain holistic psychological and archetypal perspectives.*
+#### Feature 1: Flexible Birth Chart Analysis (Western, Indian, or Both)
+* **User Story:** *As a user, I want the freedom to choose whether to calculate my chart using Western astrology only, Indian astrology only, or both simultaneously, so that the analysis aligns with the tradition I am interested in.*
 * **Acceptance Criteria:**
+  - [ ] Users are provided with a calculation mode toggle: **Western Only (Tropical)**, **Indian Only (Vedic/Sidereal)**, or **Both (Dual Mode)**.
   - [ ] System computes 10 principal celestial bodies + Rahu/Ketu with high-precision ecliptic longitudes.
-  - [ ] Computes Ascendant (Lagna) and house systems (Placidus & Whole Sign).
-  - [ ] Computes Nakshatra, Pada, KP Sub-Lord, and 4-tier Vimshottari Dasha hierarchy (MD, AD, PD, SD) on the Sidereal side.
-  - [ ] Provides an instant toggle between Tropical and Sidereal (Lahiri) calculation baselines.
+  - [ ] When Western is active: Computes Ascendant, house systems (Placidus & Whole Sign), and geometric aspects.
+  - [ ] When Indian is active: Computes Sidereal positions (Lahiri Ayanamsha), Nakshatra, Pada, KP Sub-Lord, planetary dignities, and 4-tier Vimshottari Dasha hierarchy (MD, AD, PD, SD).
+  - [ ] When Both are active: Calculates and displays both traditions concurrently side-by-side.
+  - [ ] Users can toggle modes at any time without re-entering their birth data.
 
-#### Feature 2: Dual Visual Chart Rendering
-* **User Story:** *As a user, I want to view my birth chart in clean, interactive graphical formats, so that I can easily grasp planetary geometry.*
+#### Feature 2: Flexible Visual Chart Rendering (Western Wheel, Vedic Grid, or Both)
+* **User Story:** *As a user, I want visual chart rendering to reflect my selected tradition (Western wheel only, Vedic grid only, or both side-by-side), so that the UI remains uncluttered when I only need one framework.*
 * **Acceptance Criteria:**
-  - [ ] Renders a 360° Circular Western Wheel featuring internal aspect connection lines.
-  - [ ] Renders a traditional Vedic Square Chart (South Indian and/or North Indian diamond format).
+  - [ ] If Western mode is selected: Renders an interactive 360° Circular Western Wheel with aspect lines.
+  - [ ] If Indian mode is selected: Renders a traditional Vedic Square Chart (South Indian or North Indian format).
+  - [ ] If Both mode is selected: Renders both charts side-by-side or within a responsive tab toggle view.
   - [ ] Interactive tapping on any planetary glyph displays detailed coordinates, speed, and retrograde status.
 
 #### Feature 3: Birth Chart Storage
