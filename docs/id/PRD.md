@@ -1,83 +1,208 @@
-# Dokumen Kebutuhan Produk (PRD) - Inventaris Fitur Lengkap
+# Product Requirements Document (PRD)
 
-Dokumen ini memuat **seluruh poin kebutuhan dan fitur yang diminta oleh pengguna**. Berfungsi sebagai master feature inventory sebelum dilakukan pemilahan mana yang masuk ke fase pondasi awal (MVP) dan mana yang masuk fase lanjutan.
-
----
-
-## 1. Prinsip Mutlak Sistem (*Core Mandates*)
-
-1. **Zero Tolerance pada Barnum Effect (Forer Effect):**
-   * Menolak keras segala bentuk ramalan generik, kata-kata manis (*flattery*), atau kalimat abu-abu yang bisa cocok untuk semua orang.
-   * Interpretasi harus objektif dan memiliki alasan kausalitas matematis posisi langit yang nyata.
-2. **Presisi Tinggi dalam Interpretasi Efek Transit:**
-   * Menggunakan metode yang sangat presisi dalam mengukur dampak posisi transit terhadap bagan kelahiran (*birth chart*).
+**Nama Produk:** Astrology-Interpreter Engine & Universal Platform  
+**Dokumen ID:** PRD-ASTRO-001  
+**Versi:** 2.0.0  
+**Status:** Siap Diimplementasikan (*Approved for Implementation*)  
 
 ---
 
-## 2. Inventaris Fitur Lengkap
+## 1. Konteks & Masalah (Why)
 
-### Fitur 1: Pengecekan Birth Chart Lengkap (2 Metode)
-* Pengecekan bagan kelahiran secara menyeluruh menggunakan **2 tradisi utama**:
-  1. **Astrologi Barat (*Western / Tropical*)**
-  2. **Astrologi India (*Vedic / Sidereal*)**
+### 1.1 Pernyataan Masalah (*Problem Statement*)
+1. **Inakurasi Geospatial & Manipulasi Koordinat:** Sebagian besar aplikasi astrologi komersial hanya menggunakan titik tengah kota (*city centroid*), mengabaikan koordinat fisik tempat lahir (bujur/lintang presisi). Akibatnya, derajat Ascendant (Lagna) dan batas rumah (*house cusps*) meleset hingga hitungan derajat.
+2. **Eksploitasi Efek Barnum / Forer:** Industri aplikasi astrologi dipenuhi oleh ramalan manis generik (*flattery bias*) dan kalimat abu-abu yang bisa cocok untuk siapa saja. Tidak ada kausalitas ilmiah antara posisi astronomis nyata dengan interpretasi yang diberikan.
+3. **Fragmentasi Paradigma (Barat vs India):** Pengguna terpaksa menggunakan dua aplikasi terpisah karena jarang ada platform yang menyajikan Astrologi Barat (*Tropical*) dan Astrologi India (*Vedic/Sidereal*) secara berdampingan dengan kedalaman komputasi yang setara.
+4. **Ketiadaan Validasi Empiris:** Pengguna tidak memiliki alat untuk menguji kebenaran astrologi secara empiris terhadap peristiwa nyata hidup mereka sendiri.
 
-### Fitur 2: Visualisasi Bagan Zodiak Ganda (*Dual Visual Chart Rendering*)
-* **Format Barat:** Roda melingkar 360 derajat (*Western Circular Wheel*) lengkap dengan garis-garis koneksi aspek geometris di tengahnya.
-* **Format India:** Bagan kotak tradisional Weda (*South Indian grid* dan/atau *North Indian diamond*).
-* Tabel data mentah posisi planet (derajat, menit, detik, status retrograde, dan kecepatan harian).
-
-### Fitur 3: Penyimpanan Birth Chart (*Storage*)
-* Seluruh data *birth chart* yang telah dibuat tersimpan secara permanen di penyimpanan (*storage / database*), sehingga tidak hilang dan dapat dikelola atau dibuka kembali kapan saja.
-
-### Fitur 4: Alat Bantu Penyesuaian Jam Lahir (*Birth Time Adjuster / Slider*)
-* Slider penggeser menit/jam dinamis langsung di tampilan chart untuk membantu pengguna yang jam lahirnya kurang pasti.
-* Pengguna dapat menggeser waktu mundur/maju (misal $\pm 30$ menit) dan melihat langsung pergeseran derajat Ascendant (Lagna) dan batas rumah secara *real-time*.
-
-### Fitur 5: Mesin Transit Bolak-Balik Waktu (*Time-Traveling Transit Engine*)
-* Kemampuan membaca transit secara dinamis:
-  * **Hari ini (*Real-time*)**
-  * **Masa lalu (*Past events*)**
-  * **Masa depan (*Predictive*)**
-  * Bisa ditelusuri bolak-balik secara fleksibel.
-* **Mode Interaksi Transit:**
-  * **Slider:** Navigasi penggeser waktu maju-mundur secara dinamis.
-  * **Kalender:** Tampilan kalender dengan penanda tanggal-tanggal transit penting.
-  * **Pencari Momen Penting (*Aspect Hit Scanner*):** Fitur pencari otomatis untuk melompat langsung ke tanggal terjadinya transit-transit penting (misal Saturn Return, nodal return, aspek eksak).
-
-### Fitur 6: Notifikasi Transit Kritis (*Smart Transit Alerts*)
-* Peringatan otomatis (push notification) ketika terjadi transit eksak ber-orb ketat yang menghantam titik sensitif natal pengguna.
-* Notifikasi murni menyajikan data astronomis objektif dan ranah yang dipengaruhi, tanpa bumbu ramalan sensasional.
-
-### Fitur 7: Jurnal Refleksi Empiris (*Astro-Journal / Event Diary*)
-* Fitur catatan harian terintegrasi dengan garis waktu transit.
-* Pengguna dapat mencatat peristiwa nyata di tanggal tertentu untuk menguji dan memvalidasi korelasi empiris antara pergerakan planet dengan pengalaman hidup nyata.
-
-### Fitur 8: Fitur Bagikan (*Share Feature*)
-* Pengguna dapat membagikan bagan (*chart*) dan hasil analisisnya ke pengguna lain atau mengekspornya ke platform luar.
-
-### Fitur 9: Kecocokan Multi-Relasi (*Compatibility / Synastry*)
-* Penilaian kecocokan tidak terbatas pada hubungan pasangan romantis saja, melainkan mencakup:
-  * **Pasangan** (*Romantic / Partner*)
-  * **Teman** (*Friendship*)
-  * **Rekan Kerja / Bisnis** (*Professional / Coworker*)
-* **Sumber Profil yang Dicocokkan:**
-  * Berdasarkan **Kontak HP**.
-  * Berdasarkan **Orang di Sekitar (*Nearby / Proximity*)**.
-  * Berdasarkan **Orang Tidak Dikenal:** Seluruh analisis dan dimensi kecocokan tetap dihitung dan ditampilkan secara lengkap dan menyeluruh.
-
-### Fitur 10: Kontrol Privasi & Mode Penyamaran (*Privacy & Ghost Mode*)
-* Sakelar privasi (*Privacy Toggle*) untuk melindungi data sensitif tanggal & jam lahir:
-  * Opsi mengaktifkan/menonaktifkan deteksi *"Orang di Sekitar (*Nearby*)"*.
-  * Opsi menampilkan skor kecocokan kepada orang lain tanpa membocorkan rincian data kelahiran asli pengguna.
-
-### Fitur 11: Chatbot AI dengan Fitur RAG (*Retrieval-Augmented Generation*)
-* Mengubah data astronomis mentah (*raw data*) menjadi penjelasan yang manusiawi dan komunikatif.
-* Menggunakan basis rujukan dokumen otoritatif (RAG) agar jawaban AI berakar kuat pada literatur klasik yang valid, bebas halusinasi, dan menolak pola ramalan generik (*Barnum effect*).
+### 1.2 Nilai Bisnis & Urgensi (*Business Value*)
+* **Diferensiasi Pasar yang Radikal:** Memposisikan diri sebagai platform *"No-Bullshit Astrology"* yang berbasis data presisi dan menolak pembodohan ramalan generik.
+* **Retensi Tinggi melalui Pembuktian Nyata:** Fitur jurnal empiris dan pelacak transit bolak-balik waktu mengubah pengguna pasif menjadi pengkaji aktif atas pola hidup mereka sendiri.
+* **Pasar Luas Lintas Tradisi:** Menjangkau komunitas astrologi psikologis Barat sekaligus praktisi Jyotish India dalam satu platform terpadu.
 
 ---
 
-## 3. Catatan Pemilihan Fase
+## 2. Tujuan & Metrik Sukses (Goals & KPIs)
 
-Seluruh 11 poin di atas adalah **inventaris fitur lengkap pengguna**. Pada tahap perencanaan eksekusi berikutnya, daftar ini akan dipilah bersama pengguna untuk menetapkan:
-* **Fase 1 (Fondasi Awal / MVP):** Fitur inti mutlak yang dibangun pertama kali.
-* **Fase Lanjutan:** Fitur-fitur yang dikembangkan secara bertahap setelah fondasi stabil.
+### 2.1 Tujuan Utama (*Primary Goals*)
+* Membangun engine komputasi astrologi lintas platform (Mobile & Web) yang deterministik, presisi sub-detik busur, bebas bias Barnum, dan mampu memetakan dinamika transit masa lalu, masa kini, serta masa depan.
+
+### 2.2 Indikator Keberhasilan Kuantitatif (*KPIs*)
+| Metrik | Target Kuantitatif | Metode Pengukuran |
+| :--- | :--- | :--- |
+| **Akurasi Efemeris** | $\le 0.001^\circ$ (3.6 detik busur) | Uji regresi otomatis terhadap vektor NASA JPL Horizons / Swiss Ephemeris. |
+| **Latensi Resolusi Lokasi** | $\le 10\text{ ms}$ | Benchmark kueri poligon offline `timezonefinder` tanpa koneksi internet. |
+| **Latensi Respon API** | $\le 150\text{ ms}$ | Waktu respon endpoint kalkulasi chart natal lengkap pada server FastAPI. |
+| **Tingkat Halusinasi RAG** | **0% Hallucination** | Evaluasi respons AI Chatbot terhadap teks rujukan otoritatif yang disuntikkan. |
+| **Retensi Pengguna Aktif** | $\ge 35\%$ di Bulan ke-3 | Pengguna yang aktif mencatat di Jurnal Empiris atau memantau Alert Transit. |
+
+---
+
+## 3. Target Pengguna & Persona (Who)
+
+### 3.1 Persona Pengguna
+1. **Persona A: "The Skeptical Analyst" (Rian, 24 tahun)**
+   * *Profil:* Pengembang perangkat lunak / data enthusiast.
+   * *Pain Point:* Tertarik pada astrologi tetapi muak dengan ramalan zodiak media sosial yang terasa seperti manipulasi psikologis.
+   * *Use Case:* Menggunakan aplikasi untuk melacak korelasi objektif antara transit planet dengan produktivitas dan stres menggunakan Jurnal Empiris.
+2. **Persona B: "The Serious Astrological Researcher" (Siti, 30 tahun)**
+   * *Profil:* Praktisi astrologi yang mempelajari tradisi Barat dan Weda secara bersamaan.
+   * *Pain Point:* Lelah berpindah-pindah software kuno di PC untuk melihat perbandingan bagan Tropikal dan Sidereal.
+   * *Use Case:* Membutuhkan bagan visual ganda (Roda Barat + Kotak Weda) dengan data derajat presisi, navigasi transit dinamis, dan alat penyesuaian jam lahir (*rectification slider*).
+3. **Persona C: "The Strategic Collaborator" (Budi, 28 tahun)**
+   * *Profil:* Profesional / Founder startup.
+   * *Pain Point:* Ingin mengetahui dinamika relasi kerja sama bisnis atau pertemanan tanpa embel-embel ramalan asmara.
+   * *Use Case:* Menggunakan fitur kecocokan multi-relasi untuk menganalisis kecocokan gaya komunikasi dan etika kerja dengan rekan tim.
+
+---
+
+## 4. Ruang Lingkup (Scope)
+
+### 4.1 In-Scope (11 Fitur Inti)
+1. **Pengecekan Birth Chart Lengkap:** Metode Barat (*Tropical*) & India (*Vedic/Sidereal*).
+2. **Visualisasi Bagan Ganda:** Roda Sirkular Barat 360° & Bagan Kotak Tradisional Weda (*South/North Indian*).
+3. **Penyimpanan Birth Chart:** Database permanen untuk menyimpan dan mengelola profil multi-pengguna.
+4. **Alat Bantu Jam Lahir Kurang Pasti:** Slider dinamis untuk melihat pergeseran Lagna/Rumah secara real-time.
+5. **Mesin Transit Bolak-Balik Waktu:** Navigasi hari ini, masa lalu, dan masa depan via Slider, Kalender, dan Aspect Hit Scanner.
+6. **Notifikasi Transit Kritis (*Smart Alerts*):** Peringatan otomatis saat transit eksak mengenai titik natal sensitif.
+7. **Jurnal Refleksi Empiris:** Pencatatan peristiwa harian nyata yang terhubung ke garis waktu transit.
+8. **Fitur Bagikan (*Share*):** Ekspor grafik dan ringkasan chart ke luar aplikasi.
+9. **Kecocokan Multi-Relasi (*Compatibility*):** Penilaian relasi Pasangan, Teman, dan Rekan Kerja (via Kontak, *Nearby*, dan Orang Tidak Dikenal secara menyeluruh).
+10. **Kontrol Privasi & Ghost Mode:** Sakelar sembunyikan visibilitas *nearby* dan masking data kelahiran asli.
+11. **Chatbot AI Berbasis RAG:** Penjelas data mentah berbasis teks klasik otoritatif tanpa halusinasi.
+
+### 4.2 Out-of-Scope (Ditunda ke Fase Berikutnya)
+* Sinkronisasi kalender pihak ketiga (Google Calendar / Apple Calendar sync).
+* Integrasi pembayaran langganan in-app purchase.
+* Perhitungan otomatis varga tingkat tinggi (D60 Shastiamsa).
+
+---
+
+## 5. Kebutuhan Fungsional (What & How)
+
+### User Stories & Acceptance Criteria
+
+#### Fitur 1: Pengecekan Birth Chart Lengkap (2 Metode)
+* **User Story:** *Sebagai pengguna, saya ingin menghitung chart kelahiran saya menggunakan metode Barat dan India sekaligus, agar saya memperoleh perspektif psikologis dan takdir secara utuh.*
+* **Acceptance Criteria:**
+  - [ ] Sistem menghitung 10 planet utama + Rahu/Ketu dengan presisi bujur ekliptika.
+  - [ ] Menghasilkan Ascendant (Lagna) dan sistem rumah (Placidus & Whole Sign).
+  - [ ] Menghasilkan Nakshatra, Pada, Sub-Lord KP, dan siklus 4 lapis Vimshottari Dasha (MD, AD, PD, SD) pada sisi Sidereal.
+  - [ ] Menyediakan sakelar instan untuk beralih antara kerangka Tropikal dan Sidereal (Lahiri).
+
+#### Fitur 2: Visualisasi Bagan Zodiak Ganda
+* **User Story:** *Sebagai pengguna, saya ingin melihat bagan kelahiran dalam bentuk visual yang rapi dan interaktif, agar mudah membaca posisi planet.*
+* **Acceptance Criteria:**
+  - [ ] Merender Roda Sirkular Barat 360° lengkap dengan garis koneksi aspek geometris.
+  - [ ] Merender Bagan Kotak Tradisional Weda (format India Selatan dan/atau India Utara).
+  - [ ] Setiap planet pada grafik visual dapat di-klik untuk menampilkan tabel data derajat, kecepatan, dan status retrograde.
+
+#### Fitur 3: Penyimpanan Birth Chart (*Storage*)
+* **User Story:** *Sebagai pengguna, saya ingin menyimpan bagan kelahiran saya dan teman-teman saya, agar saya tidak perlu memasukkan data ulang setiap kali membuka aplikasi.*
+* **Acceptance Criteria:**
+  - [ ] Data profil tersimpan permanen di database lokal/server.
+  - [ ] Pengguna dapat menambah, mengedit, mengelompokkan (kategori), dan menghapus profil chart.
+
+#### Fitur 4: Alat Bantu Jam Lahir Kurang Pasti (*Rectification Slider*)
+* **User Story:** *Sebagai pengguna yang tidak tahu pasti menit lahirnya, saya ingin menggeser slider waktu secara langsung di layar chart, agar saya bisa melihat perubahan Lagna dan rumah secara instan.*
+* **Acceptance Criteria:**
+  - [ ] Terdapat slider interaktif dengan rentang penyesuaian waktu (misal $\pm 30$ hingga $\pm 60$ menit).
+  - [ ] Pergeseran slider langsung memperbarui derajat Lagna dan batas rumah pada grafik visual tanpa me-reload aplikasi.
+
+#### Fitur 5: Mesin Transit Bolak-Balik Waktu (*Time-Traveling*)
+* **User Story:** *Sebagai pengguna, saya ingin menelusuri posisi transit di masa lalu atau masa depan, agar saya bisa mempelajari peristiwa hidup lampau atau mengantisipasi cuaca langit mendatang.*
+* **Acceptance Criteria:**
+  - [ ] Mode Slider: Pengguna dapat menggeser waktu mundur/maju hari demi hari dengan animasi posisi planet yang mulus.
+  - [ ] Mode Kalender: Tampilan bulanan dengan indikator warna tanggal-tanggal transit penting.
+  - [ ] Aspect Hit Scanner: Fitur pencari otomatis yang memungkinkan pengguna memilih transit (misal: "Saturn Opposition Sun") dan sistem langsung melompat ke tanggal eksak kejadiannya.
+
+#### Fitur 6: Notifikasi Transit Kritis (*Smart Alerts*)
+* **User Story:** *Sebagai pengguna, saya ingin mendapatkan notifikasi saat ada transit eksak yang penting, agar saya tetap waspada tanpa harus membuka aplikasi setiap hari.*
+* **Acceptance Criteria:**
+  - [ ] Notifikasi otomatis terpicu jika ada transit dengan orb ketat ($\le 0.25^\circ$) mengenai titik sensitif natal.
+  - [ ] Pesan notifikasi menyajikan fakta astronomis objektif dan area hidup yang dipengaruhi tanpa bumbu ramalan sensasional.
+
+#### Fitur 7: Jurnal Refleksi Empiris (*Astro-Journal*)
+* **User Story:** *Sebagai pengguna, saya ingin mencatat peristiwa nyata di tanggal tertentu pada garis waktu transit, agar saya bisa memvalidasi korelasi astrologi secara objektif.*
+* **Acceptance Criteria:**
+  - [ ] Pengguna dapat menambahkan catatan teks pada tanggal transit tertentu.
+  - [ ] Catatan tersimpan dan terhubung langsung dengan snapshot konfigurasi langit pada tanggal tersebut.
+
+#### Fitur 8: Fitur Bagikan (*Share Feature*)
+* **User Story:** *Sebagai pengguna, saya ingin membagikan hasil bagan atau analisis transit saya, agar bisa didiskusikan dengan teman atau praktisi lain.*
+* **Acceptance Criteria:**
+  - [ ] Kemampuan mengekspor grafik bagan ke format gambar (PNG/SVG) atau tautan berbagi (*shareable link*).
+
+#### Fitur 9: Kecocokan Multi-Relasi (*Compatibility / Synastry*)
+* **User Story:** *Sebagai pengguna, saya ingin mengecek kecocokan dengan teman atau rekan kerja bisnis, agar saya memahami dinamika komunikasi dan kerja sama.*
+* **Acceptance Criteria:**
+  - [ ] Penilaian kecocokan mendukung kategori: Pasangan, Teman, dan Rekan Kerja/Bisnis.
+  - [ ] Sumber profil: Kontak HP, Orang di Sekitar (*Nearby*), dan Orang Tidak Dikenal.
+  - [ ] Untuk Orang Tidak Dikenal, seluruh dimensi kecocokan tetap dihitung dan disajikan secara lengkap.
+
+#### Fitur 10: Kontrol Privasi & Mode Penyamaran (*Ghost Mode*)
+* **User Story:** *Sebagai pengguna, saya ingin melindungi privasi jam dan tanggal lahir saya dari orang lain saat menggunakan fitur sosial, agar data sensitif saya aman.*
+* **Acceptance Criteria:**
+  - [ ] Pengguna dapat menyalakan/mematikan fitur deteksi *"Orang di Sekitar (*Nearby*)"*.
+  - [ ] Opsi menampilkan hasil kecocokan kepada orang lain tanpa menampilkan tanggal dan jam lahir asli pengguna.
+
+#### Fitur 11: Chatbot AI Berbasis RAG
+* **User Story:** *Sebagai pengguna, saya ingin bertanya kepada chatbot tentang arti data mentah posisi planet saya, agar saya mendapatkan penjelasan mendalam tanpa ramalan palsu.*
+* **Acceptance Criteria:**
+  - [ ] Chatbot menggunakan sistem RAG yang menyerap teks klasik otoritatif terverifikasi.
+  - [ ] Jawaban AI berlandaskan data koordinat mentah pengguna dan teks doktrin asli, menolak halusinasi dan kalimat Barnum generik.
+
+---
+
+### Alur Pengguna Inti (*User Flow Diagram*)
+
+```mermaid
+flowchart TD
+    Start([Buka Aplikasi]) --> Ingestion[Input Tanggal, Jam & Pin Peta GPS]
+    Ingestion --> CheckTime{Jam Lahir Pasti?}
+    CheckTime -- Tidak --> Rectifier[Gunakan Slider Penyesuaian Jam]
+    CheckTime -- Ya --> Compute[Kalkulasi Dual-Core: Barat & India]
+    Rectifier --> Compute
+    Compute --> SaveChart[(Simpan ke Storage)]
+    SaveChart --> Dashboard[Tampilan Dashboard Bagan Ganda]
+    Dashboard --> ActionSelection{Pilih Aksi}
+    
+    ActionSelection --> TransitView[Eksplorasi Transit: Slider / Kalender]
+    ActionSelection --> Compatibility[Uji Kecocokan: Teman / Kerja / Pasangan]
+    ActionSelection --> AskAI[Konsultasi Chatbot RAG]
+    ActionSelection --> Journal[Tulis Jurnal Peristiwa Empiris]
+    
+    TransitView --> HitScanner[Aspect Hit Scanner Otomatis]
+    TransitView --> AlertConfig[Atur Smart Transit Alerts]
+```
+
+---
+
+## 6. Kebutuhan Non-Fungsional (NFR)
+
+* **NFR-PERF-01 (Performa & Latensi):** Kalkulasi bagan natal lengkap + Dasha $\le 150\text{ ms}$. Kueri zona waktu offline $\le 10\text{ ms}$.
+* **NFR-ACC-01 (Presisi Astronomis):** Bujur planet wajib cocok dengan standar Swiss Ephemeris / NASA JPL dalam batas toleransi $\pm 0.001^\circ$ (3.6 detik busur).
+* **NFR-DET-01 (Determinisme Mutlak):** Parameter masukan yang sama wajib menghasilkan keluaran data matematis yang identik tanpa variasi acak.
+* **NFR-COMPAT-01 (Kompatibilitas Universal):** Satu basis kode (React Native Expo) wajib berjalan secara konsisten di iOS, Android, dan Web browser modern.
+* **NFR-SEC-01 (Keamanan & Privasi):** Koordinat GPS dan data kelahiran pengguna tidak boleh dibocorkan ke pihak ketiga atau pelacak iklan. Mode penyamaran (*Ghost Mode*) wajib memblokir transmisi koordinat saat aktif.
+
+---
+
+## 7. Dependensi, Risiko, & Rencana Rilis
+
+### 7.1 Dependensi Teknis
+* **Backend:** Python 3.11+, FastAPI, `ephem` / `pyswisseph`, `timezonefinder`, `zoneinfo`, SQLAlchemy 2.0.
+* **Frontend:** Expo SDK 51+, React Native, `react-native-maps`, `expo-location`, `react-native-svg`, Zustand, TanStack Query.
+* **AI/RAG:** Vector database lokal / cloud untuk dokumen doktrin astrologi klasik, LLM runtime.
+
+### 7.2 Mitigasi Risiko
+| Risiko Potensial | Dampak | Strategi Mitigasi |
+| :--- | :---: | :--- |
+| **Pengguna Tidak Tahu Menit Lahir** | Tinggi | Disediakan fitur *Birth Time Adjuster Slider* agar pengguna bisa mencocokkan Lagna secara interaktif. |
+| **Halusinasi pada Chatbot AI** | Kritis | RAG membatasi konteks jawaban hanya pada teks literatur yang disuntikkan + *system prompt* anti-Barnum ketat. |
+| **Beban CPU Tinggi pada Perhitungan Transit** | Sedang | Menerapkan *Hourly Discrete Caching* di memori/database untuk data posisi langit harian. |
+
+### 7.3 Tahapan Rencana Rilis (*Release Phases*)
+* **Fase 1 (Fondasi Inti / MVP):** Ingesti Lokasi Peta + Engine Dual-Core (Barat & India) + Penyimpanan Storage + Visualisasi Bagan Ganda + Slider Jam Lahir.
+* **Fase 2 (Dinamika Waktu & Komunitas):** Mesin Transit Bolak-Balik Waktu (Slider, Kalender, Scanner) + Smart Alerts + Jurnal Empiris + Fitur Bagikan.
+* **Fase 3 (Sosial & Kecerdasan AI):** Kecocokan Multi-Relasi (Kontak, *Nearby*, Orang Asing) + Ghost Mode Privasi + Chatbot AI dengan RAG.
