@@ -16,6 +16,7 @@ Before beginning codebase implementation, review the comprehensive architectural
 | **[Database Schema & Models](./docs/DATA_SCHEMA.md)** | `DATA-ASTRO-001` | Entity-Relationship Diagram (ERD), PostgreSQL/SQLite tables & indexes. |
 | **[QA & Verification Strategy](./docs/TEST_STRATEGY.md)** | `QA-ASTRO-001` | Ground truth test vectors, ephemeris tolerances, and CI quality gates. |
 | **[Roadmap & Developer Backlog](./docs/ROADMAP_AND_BACKLOG.md)** | `RDM-ASTRO-001` | Sprint breakdown, granular task list, and Definition of Done (DoD). |
+| **[Architecture Decision Records (ADRs)](./docs/adr/README.md)** | `ADR-0001..0006` | Recorded technical decisions, rationale, trade-offs, and rejected options. |
 
 ---
 
