@@ -6,6 +6,7 @@ Welcome to the engineering documentation for the **Astrology-Interpreter** platf
 
 | Document | Description |
 | :--- | :--- |
+| 🧠 **[concepts/ASTROLOGY_CONCEPTS.md](./concepts/ASTROLOGY_CONCEPTS.md)** | **Domain Knowledge (Astrology Fundamentals):** 4 Pillars (Planets, Signs, Houses, Aspects), Western vs Vedic paradigms, anti-Barnum rules. |
 | 📄 **[PRD.md](./PRD.md)** | Product Requirements: scope, functional specifications, and anti-sycophancy rules. |
 | 🏗️ **[ARCHITECTURE.md](./ARCHITECTURE.md)** | System Design: directory layout, mathematical pipelines, and Expo Universal pattern. |
 | 🔌 **[API_SPEC.md](./API_SPEC.md)** | REST Interface: endpoints, JSON payload schemas, and standard error catalog. |

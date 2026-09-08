@@ -6,6 +6,7 @@ Selamat datang di repositori dokumentasi rekayasa platform **Astrology-Interpret
 
 | Dokumen | Deskripsi |
 | :--- | :--- |
+| 🧠 **[concepts/DASAR_ASTROLOGI.md](./concepts/DASAR_ASTROLOGI.md)** | **Pengetahuan Domain (Dasar Astrologi):** 4 Pilar (Planet, Zodiak, Rumah, Aspek), komparasi Barat vs India, dan aturan anti-Barnum. |
 | 📄 **[PRD.md](./PRD.md)** | Kebutuhan Produk: cakupan, spesifikasi fungsional, dan aturan anti-sycophancy. |
 | 🏗️ **[ARCHITECTURE.md](./ARCHITECTURE.md)** | Desain Sistem: tata letak direktori, pipa alur matematika, dan pola Universal Expo. |
 | 🔌 **[API_SPEC.md](./API_SPEC.md)** | Antarmuka REST: endpoint, skema payload JSON, dan katalog kode error terstandar. |

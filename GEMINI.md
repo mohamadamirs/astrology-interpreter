@@ -27,6 +27,7 @@
 Seluruh spesifikasi teknis matang telah disusun dalam format dwibahasa di folder [`docs/`](./docs):
 
 ### 🇮🇩 Bahasa Indonesia (`docs/id/`)
+* 🧠 **[`docs/id/concepts/DASAR_ASTROLOGI.md`](./docs/id/concepts/DASAR_ASTROLOGI.md)** — Pengetahuan Domain Astrologi: 4 Pilar (Planet, Zodiak, Rumah, Aspek), perbandingan Barat vs India, dan aturan anti-Barnum.
 * 📄 **[`docs/id/PRD.md`](./docs/id/PRD.md)** — Kebutuhan produk, cakupan MVP, spesifikasi modul (GEO-TIME, ASTRO-CORE, JYOTISH, INTERPRET, CLIENT-UI).
 * 🏗️ **[`docs/id/ARCHITECTURE.md`](./docs/id/ARCHITECTURE.md)** — Desain sistem teknis, struktur folder backend/frontend, dan formula matematika.
 * 🔌 **[`docs/id/API_SPEC.md`](./docs/id/API_SPEC.md)** — Spesifikasi kontrak REST API, format envelope, dan katalog kode error.
@@ -36,6 +37,7 @@ Seluruh spesifikasi teknis matang telah disusun dalam format dwibahasa di folder
 * 🏛️ **[`docs/id/adr/`](./docs/id/adr/README.md)** — 6 Rekaman Keputusan Arsitektur (Python FastAPI, Expo, Offline TZ, Dual-Zodiac, Exponential Orb, Hourly Cache).
 
 ### 🇬🇧 English (`docs/en/`)
+* 🧠 **[`docs/en/concepts/ASTROLOGY_CONCEPTS.md`](./docs/en/concepts/ASTROLOGY_CONCEPTS.md)** — Domain Knowledge: 4 Pillars (Planets, Signs, Houses, Aspects), Western vs Vedic paradigms, and anti-Barnum rules.
 * 📄 **[`docs/en/PRD.md`](./docs/en/PRD.md)** — Product Requirements Document (Scope, Modules, Anti-sycophancy rules).
 * 🏗️ **[`docs/en/ARCHITECTURE.md`](./docs/en/ARCHITECTURE.md)** — Technical Design Document (Pipelines, Directory layout).
 * 🔌 **[`docs/en/API_SPEC.md`](./docs/en/API_SPEC.md)** — REST API Contracts & Error Catalog.
@@ -48,10 +50,7 @@ Seluruh spesifikasi teknis matang telah disusun dalam format dwibahasa di folder
 
 ## 4. Batasan Teknis & Panduan Pengembang / AI (*Guardrails*)
 
-Saat menulis atau memodifikasi kode di repositori ini, patuhi aturan berikut:
-1. **Dilarang Menambah Kueri Jaringan untuk Lokasi di Backend:** Resolusi zona waktu wajib menggunakan poligon lokal `timezonefinder`, bukan API pihak ketiga berbayar/berjaringan.
-2. **Kunci Sidereal pada Dasha:** Perhitungan Vimshottari Dasha dan Nakshatra hanya boleh menggunakan bujur Sidereal (Lahiri/Nirayana). Jangan pernah memasukkan bujur Tropikal ke fungsi Dasha.
-3. **Fungsi Pembobotan Eksponensial Kontinu:** Jangan gunakan tabel batas orb kaku (*step-cutoff*). Gunakan selalu rumus:
-   $$W(\delta) = 10.0 \times \exp(-1.4 \times \delta)$$
-4. **Prinsip Anti-Sikofansi:** Jangan pernah menyaring atau menghaluskan skor negatif dalam skrip interpretasi demi menyenangkan pengguna.
-5. **Universal Client Parity:** Hindari dependensi yang hanya jalan di mobile tanpa fallback web.
+1. **Dilarang Menambah Kueri Jaringan untuk Lokasi di Backend:** Resolusi zona waktu wajib menggunakan poligon lokal `timezonefinder`.
+2. **Kunci Sidereal pada Dasha:** Perhitungan Vimshottari Dasha dan Nakshatra hanya boleh menggunakan bujur Sidereal (Lahiri/Nirayana).
+3. **Fungsi Pembobotan Eksponensial Kontinu:** Gunakan rumus $W(\delta) = 10.0 \times \exp(-1.4 \times \delta)$.
+4. **Prinsip Anti-Sikofansi:** Jangan pernah menyaring skor negatif demi menyenangkan pengguna.
