@@ -46,7 +46,7 @@ Dokumen ini memuat **seluruh poin kebutuhan dan fitur yang diminta secara khusus
 * **Sumber Profil yang Dicocokkan:**
   * Berdasarkan **Kontak HP**.
   * Berdasarkan **Orang di Sekitar (*Nearby / Proximity*)**.
-  * Berdasarkan **Orang Tidak Dikenal dengan Data Minim** (hanya diketahui kota dan profil tanggal lahir, tanpa mengetahui jam lahir).
+  * Berdasarkan **Orang Tidak Dikenal:** Seluruh analisis dan dimensi kecocokan tetap ditampilkan secara lengkap dan menyeluruh.
 
 ### Fitur 6: Chatbot AI dengan Fitur RAG (*Retrieval-Augmented Generation*)
 * Karena data astronomis yang dihasilkan kalkulator masih sangat mentah (*raw data*), disediakan asisten **Chatbot bertenaga RAG**.

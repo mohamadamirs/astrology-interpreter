@@ -46,7 +46,7 @@ This document outlines **all requirements and features explicitly requested by t
 * **Target Profile Ingestion Sources:**
   * Based on **Phone Contacts**.
   * Based on **Nearby Users / Proximity**.
-  * Based on **Unknown / Minimal Data Profiles** (known city and birth date only, without birth time).
+  * Based on **Unknown / Stranger Profiles:** Complete compatibility dimensions and analysis are fully computed and displayed.
 
 ### Feature 6: AI Chatbot with RAG (*Retrieval-Augmented Generation*)
 * To translate dense raw astronomical coordinates, nakshatras, and aspect degrees into clear, human-understandable insights.
