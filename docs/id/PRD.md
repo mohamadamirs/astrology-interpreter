@@ -58,7 +58,7 @@
 
 ## 4. Ruang Lingkup (Scope)
 
-### 4.1 In-Scope (11 Fitur Inti)
+### 4.1 In-Scope (16 Fitur Terperinci)
 1. **Pengecekan Birth Chart Fleksibel:** Opsi metode Barat (*Tropical*), India (*Vedic/Sidereal*), atau Keduanya sekaligus.
 2. **Visualisasi Bagan Fleksibel:** Opsi tampilan Roda Sirkular Barat 360°, Bagan Kotak Tradisional Weda (*South/North Indian*), atau Keduanya berdampingan.
 3. **Penyimpanan Birth Chart:** Database permanen untuk menyimpan dan mengelola profil multi-pengguna.
@@ -70,6 +70,11 @@
 9. **Kecocokan Multi-Relasi (*Compatibility*):** Penilaian relasi Pasangan, Teman, dan Rekan Kerja (via Kontak, *Nearby*, dan Orang Tidak Dikenal secara menyeluruh).
 10. **Kontrol Privasi & Ghost Mode:** Sakelar sembunyikan visibilitas *nearby* dan masking data kelahiran asli.
 11. **Chatbot AI Berbasis RAG:** Penjelas data mentah berbasis teks klasik otoritatif tanpa halusinasi.
+12. **Mesin Korelasi & Backtesting Empiris:** Data mining statistik (uji Chi-Square & korelasi) antara log jurnal dan transit langit.
+13. **Astro-Kartografi & Relokasi Geodetik:** Proyeksi garis angularitas planet pada peta bumi dan kalkulator bagan relokasi.
+14. **Sinkronisasi Biometrik & Pelacak Somatik:** Penyelarasan HRV, detak jantung, dan tidur via Health Connect/HealthKit.
+15. **Komposit Tim & Sinergi Kelompok:** Perhitungan bagan titik tengah vektor kelompok (3-10 orang) dan pemindai jendela rilis produk.
+16. **Pengoptimal Waktu Eksekusi Chrono-Trigger:** Pemindai jendela waktu eksekusi objektif per jam berdasarkan kriteria penalti dan penguat.
 
 ### 4.2 Out-of-Scope (Ditunda ke Fase Berikutnya)
 * Sinkronisasi kalender pihak ketiga (Google Calendar / Apple Calendar sync).
@@ -209,3 +214,4 @@ flowchart TD
 * **Fase 1 (Fondasi Inti / MVP):** Ingesti Lokasi Peta + Engine Dual-Core (Barat & India) + Penyimpanan Storage + Visualisasi Bagan Ganda + Slider Jam Lahir.
 * **Fase 2 (Dinamika Waktu & Komunitas):** Mesin Transit Bolak-Balik Waktu (Slider, Kalender, Scanner) + Smart Alerts + Jurnal Empiris + Fitur Bagikan.
 * **Fase 3 (Sosial & Kecerdasan AI):** Kecocokan Multi-Relasi (Kontak, *Nearby*, Orang Asing) + Ghost Mode Privasi + Chatbot AI dengan RAG.
+* **Fase 4 (Data Mining & Astrodinamika Lanjut):** Mesin Korelasi & Backtesting (FEAT-12) + Astro-Kartografi (FEAT-13) + Telemetri Biometrik (FEAT-14) + Komposit Tim B2B (FEAT-15) + Pengoptimal Chrono-Trigger (FEAT-16).

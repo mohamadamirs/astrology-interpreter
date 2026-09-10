@@ -58,7 +58,7 @@
 
 ## 4. Scope
 
-### 4.1 In-Scope (11 Core Features)
+### 4.1 In-Scope (16 Detailed Features)
 1. **Flexible Birth Chart Analysis:** Optional selection of Western (*Tropical*), Indian (*Vedic/Sidereal*), or Both traditions simultaneously.
 2. **Flexible Visual Chart Rendering:** Configurable display of 360-degree Western Circular Wheel, Traditional Vedic Grid Chart (*South/North Indian*), or Both side-by-side.
 3. **Persistent Birth Chart Storage:** Local and server-side database storage to manage multi-user profiles.
@@ -70,6 +70,11 @@
 9. **Multi-Archetype Compatibility (*Synastry*):** Compatibility assessments for Romantic, Friend, and Coworker archetypes (via Phone Contacts, Nearby Proximity, and Strangers with full analysis displayed).
 10. **Privacy Controls & Ghost Mode:** Nearby visibility toggles and sensitive raw birth data masking.
 11. **AI Chatbot with RAG:** Dense astronomical data translated into clear, doctrine-grounded explanations with zero hallucination.
+12. **Personal Backtesting & Correlation Engine:** Statistical data mining (Chi-Square & Pearson tests) correlating logged real-life states with celestial transits.
+13. **Deterministic Astro-Cartography & Relocation Map:** Geodetic projection of planetary angularity lines across Earth's coordinates and instant relocated chart recalculation.
+14. **Biometric Sync & Somatic HRV Tracker:** Local-first synchronization of HRV, resting heart rate, and sleep architecture via Health Connect/HealthKit.
+15. **Team Composite & Group Synergy Matrix:** Vector circular midpoint chart computation for groups (3-10 members) with product launch window optimizer.
+16. **Precision Chrono-Trigger Execution Optimizer:** Objective discrete hourly suitability scoring for strategic initiatives (contracts, launches, negotiations).
 
 ### 4.2 Out-of-Scope (Deferred to Subsequent Phases)
 * Third-party calendar synchronization (Google Calendar / Apple Calendar sync).
@@ -209,3 +214,4 @@ flowchart TD
 * **Phase 1 (Core Foundation / MVP):** Map Pin Ingestion + Dual-Core Calculation Engine (Western & Vedic) + Chart Storage + Dual Visual Rendering + Rectification Slider.
 * **Phase 2 (Time Dynamics & Community):** Time-Traveling Transit Engine (Slider, Calendar, Scanner) + Smart Transit Alerts + Empirical Astro-Journal + Share Feature.
 * **Phase 3 (Social Dynamics & AI Intelligence):** Multi-Archetype Compatibility (Contacts, Nearby, Strangers) + Privacy Ghost Mode + Doctrine-Grounded AI Chatbot with RAG.
+* **Phase 4 (Empirical Data Mining & Advanced Astrodynamics):** Personal Backtesting Engine (FEAT-12) + Astro-Cartography (FEAT-13) + Biometric Health Telemetry (FEAT-14) + Team Composite Synergy (FEAT-15) + Chrono-Trigger Execution Optimizer (FEAT-16).

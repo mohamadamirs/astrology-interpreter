@@ -1,6 +1,6 @@
 # Indeks Spesifikasi Fitur Terperinci (Feature Specifications)
 
-Direktori ini memecah konsep besar dari seluruh 11 fitur utama sistem **Astrology-Interpreter** menjadi spesifikasi atomik yang mendetail (input, algoritma matematis, edge cases, dan skema kontrak JSON):
+Direktori ini memecah konsep besar dari seluruh 16 fitur utama sistem **Astrology-Interpreter** menjadi spesifikasi atomik yang mendetail (input, algoritma matematis, edge cases, dan skema kontrak JSON):
 
 | Kode | Nama Fitur | Status | Berkas Spesifikasi |
 | :--- | :--- | :---: | :--- |
@@ -14,4 +14,9 @@ Direktori ini memecah konsep besar dari seluruh 11 fitur utama sistem **Astrolog
 | **FEAT-08** | Fitur Bagikan (Share Feature & High-Res Export) | Disetujui | [08_fitur_bagikan.md](file:///root/astrology-interpreter/docs/id/features/08_fitur_bagikan.md) |
 | **FEAT-09** | Kecocokan Multi-Relasi (Romantis, Teman, Rekan Kerja & Orang Asing) | Disetujui | [09_kecocokan_multi_arketipe.md](file:///root/astrology-interpreter/docs/id/features/09_kecocokan_multi_arketipe.md) |
 | **FEAT-10** | Kontrol Privasi & Ghost Mode (Mode Penyamaran) | Disetujui | [10_kontrol_privasi_dan_ghost_mode.md](file:///root/astrology-interpreter/docs/id/features/10_kontrol_privasi_dan_ghost_mode.md) |
-| **FEAT-11** | Chatbot AI Berbasis RAG & Grounding Doktrin Klasik | Disetujui | [11_chatbot_ai_rag.md](file:///root/astrology-interpreter/docs/id/features/11_chatbot_ai_rag.md) |
+| **FEAT-11** | Chatbot AI Berbasis RAG & Grounding Doktrin Klasik | Disetujui | [11_chatbot_ai_rag.md](./11_chatbot_ai_rag.md) |
+| **FEAT-12** | Mesin Korelasi & Backtesting Empiris (Personal Data Mining) | Disetujui | [12_mesin_korelasi_dan_backtesting.md](./12_mesin_korelasi_dan_backtesting.md) |
+| **FEAT-13** | Astro-Kartografi & Relokasi Geodetik | Disetujui | [13_astrokartografi_dan_relokasi.md](./13_astrokartografi_dan_relokasi.md) |
+| **FEAT-14** | Sinkronisasi Biometrik & Pelacak Somatik (HRV Telemetry) | Disetujui | [14_sinkronisasi_biometrik_dan_somatik.md](./14_sinkronisasi_biometrik_dan_somatik.md) |
+| **FEAT-15** | Komposit Tim & Sinergi Kelompok (B2B Dynamics) | Disetujui | [15_komposit_tim_dan_sinergi_kelompok.md](./15_komposit_tim_dan_sinergi_kelompok.md) |
+| **FEAT-16** | Pengoptimal Waktu Eksekusi Chrono-Trigger (Precision Muhurta) | Disetujui | [16_pengoptimal_waktu_eksekusi_chrono_trigger.md](./16_pengoptimal_waktu_eksekusi_chrono_trigger.md) |
