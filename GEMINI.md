@@ -26,25 +26,15 @@
 
 Seluruh spesifikasi teknis matang telah disusun dalam format dwibahasa di folder [`docs/`](./docs):
 
+* 🌐 **[Portal Dokumentasi Terpadu (`docs/README.md`)](./docs/README.md)**
+
 ### 🇮🇩 Bahasa Indonesia (`docs/id/`)
-* 🧠 **[`docs/id/concepts/DASAR_ASTROLOGI.md`](./docs/id/concepts/DASAR_ASTROLOGI.md)** — Pengetahuan Domain Astrologi: 4 Pilar (Planet, Zodiak, Rumah, Aspek), perbandingan Barat vs India, dan aturan anti-Barnum.
-* 📄 **[`docs/id/PRD.md`](./docs/id/PRD.md)** — Kebutuhan produk, cakupan MVP, spesifikasi modul (GEO-TIME, ASTRO-CORE, JYOTISH, INTERPRET, CLIENT-UI).
-* 🏗️ **[`docs/id/ARCHITECTURE.md`](./docs/id/ARCHITECTURE.md)** — Desain sistem teknis, struktur folder backend/frontend, dan formula matematika.
-* 🔌 **[`docs/id/API_SPEC.md`](./docs/id/API_SPEC.md)** — Spesifikasi kontrak REST API, format envelope, dan katalog kode error.
-* 🗄️ **[`docs/id/DATA_SCHEMA.md`](./docs/id/DATA_SCHEMA.md)** — ERD database, definisi tabel SQLAlchemy/PostgreSQL, dan indeks performa.
-* 🧪 **[`docs/id/TEST_STRATEGY.md`](./docs/id/TEST_STRATEGY.md)** — Strategi QA, vektor acuan ground-truth benchmark, dan ambang batas toleransi.
-* 🗺️ **[`docs/id/ROADMAP.md`](./docs/id/ROADMAP.md)** — Rencana rilis 5 sprint, backlog task per-file, dan kriteria Definition of Done (DoD).
-* 🏛️ **[`docs/id/adr/`](./docs/id/adr/README.md)** — 6 Rekaman Keputusan Arsitektur (Python FastAPI, Expo, Offline TZ, Dual-Zodiac, Exponential Orb, Hourly Cache).
+* 📄 **[`docs/id/PRD.md`](./docs/id/PRD.md)** — Kebutuhan produk, batasan non-fungsional, persona, cakupan 11 fitur inti, dan rencana rilis.
+* 📂 **[`docs/id/features/INDEX.md`](./docs/id/features/INDEX.md)** — Indeks Spesifikasi 11 Fitur Atomik (FEAT-01 s.d. FEAT-11: input terperinci, formula matematika, alur algoritma, diagram Mermaid, edge cases, dan kontrak respons JSON).
 
 ### 🇬🇧 English (`docs/en/`)
-* 🧠 **[`docs/en/concepts/ASTROLOGY_CONCEPTS.md`](./docs/en/concepts/ASTROLOGY_CONCEPTS.md)** — Domain Knowledge: 4 Pillars (Planets, Signs, Houses, Aspects), Western vs Vedic paradigms, and anti-Barnum rules.
-* 📄 **[`docs/en/PRD.md`](./docs/en/PRD.md)** — Product Requirements Document (Scope, Modules, Anti-sycophancy rules).
-* 🏗️ **[`docs/en/ARCHITECTURE.md`](./docs/en/ARCHITECTURE.md)** — Technical Design Document (Pipelines, Directory layout).
-* 🔌 **[`docs/en/API_SPEC.md`](./docs/en/API_SPEC.md)** — REST API Contracts & Error Catalog.
-* 🗄️ **[`docs/en/DATA_SCHEMA.md`](./docs/en/DATA_SCHEMA.md)** — Database Schema & Data Models.
-* 🧪 **[`docs/en/TEST_STRATEGY.md`](./docs/en/TEST_STRATEGY.md)** — QA & Ephemeris Benchmark Testing Strategy.
-* 🗺️ **[`docs/en/ROADMAP.md`](./docs/en/ROADMAP.md)** — 5-Sprint Backlog & Definition of Done.
-* 🏛️ **[`docs/en/adr/`](./docs/en/adr/README.md)** — Architecture Decision Records (ADR-0001 through ADR-0006).
+* 📄 **[`docs/en/PRD.md`](./docs/en/PRD.md)** — Product Requirements Document (Scope, Non-functional requirements, and release phases).
+* 📂 **[`docs/en/features/INDEX.md`](./docs/en/features/INDEX.md)** — Detailed atomic specifications for all 11 core features (FEAT-01 through FEAT-11).
 
 ---
 

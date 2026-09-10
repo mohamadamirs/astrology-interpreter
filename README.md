@@ -10,8 +10,9 @@ Choose your language / Pilih bahasa Anda:
 
 | Language | Entry Point | Core Files |
 | :--- | :--- | :--- |
-| 🇬🇧 **English** | **[docs/en/README.md](./docs/en/README.md)** | [PRD](./docs/en/PRD.md) • [Architecture](./docs/en/ARCHITECTURE.md) • [API](./docs/en/API_SPEC.md) • [Schema](./docs/en/DATA_SCHEMA.md) • [QA](./docs/en/TEST_STRATEGY.md) • [Roadmap](./docs/en/ROADMAP.md) • [ADRs](./docs/en/adr/README.md) |
-| 🇮🇩 **Bahasa Indonesia** | **[docs/id/README.md](./docs/id/README.md)** | [PRD](./docs/id/PRD.md) • [Arsitektur](./docs/id/ARCHITECTURE.md) • [API](./docs/id/API_SPEC.md) • [Skema Data](./docs/id/DATA_SCHEMA.md) • [QA](./docs/id/TEST_STRATEGY.md) • [Roadmap](./docs/id/ROADMAP.md) • [ADR](./docs/id/adr/README.md) |
+| 🌐 **Portal** | **[docs/README.md](./docs/README.md)** | Unified Documentation Portal |
+| 🇬🇧 **English** | **[docs/en/PRD.md](./docs/en/PRD.md)** | [PRD v2.0.0](./docs/en/PRD.md) • [11 Feature Specifications](./docs/en/features/INDEX.md) |
+| 🇮🇩 **Bahasa Indonesia** | **[docs/id/PRD.md](./docs/id/PRD.md)** | [PRD v2.0.0](./docs/id/PRD.md) • [Indeks 11 Fitur Inti](./docs/id/features/INDEX.md) |
 
 ---
 
