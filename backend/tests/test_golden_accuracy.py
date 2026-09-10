@@ -89,3 +89,108 @@ def test_planetary_ephemeris_accuracy(vector):
             f"Moon longitude deviation exceeds 0.001 deg for {vector['label']}: "
             f"got {moon_lon:.5f}, expected {expected['moon_tropical_longitude']:.5f}"
         )
+
+
+def test_angles_and_houses_jakarta():
+    """
+    FEAT-01: Ascendant, Midheaven, and House Systems.
+    """
+    from backend.app.astro.houses import calculate_angles_and_houses, assign_houses_to_planets
+
+    geo_res = resolve_timezone_and_utc(-6.2088, 106.8456, "2000-01-01T12:00:00")
+    angles_res = calculate_angles_and_houses(
+        utc_datetime=geo_res.utc_datetime,
+        latitude=-6.2088,
+        longitude=106.8456,
+        house_system="WHOLE_SIGN"
+    )
+
+    asc = angles_res["angles"]["ASC"]
+    mc = angles_res["angles"]["MC"]
+
+    # Ascendant for Jakarta 2000-01-01 12:00 WIB is in Aries (~12.48 deg)
+    assert asc["sign"] == "Aries"
+    assert math.isclose(asc["longitude"], 12.4787, abs_tol=0.1)
+
+    # Midheaven is in Capricorn (~281.05 deg)
+    assert mc["sign"] == "Capricorn"
+    assert math.isclose(mc["longitude"], 281.0492, abs_tol=0.1)
+
+    # In Whole Sign, House 1 must be Aries (0 to 30)
+    assert len(angles_res["houses"]) == 12
+    assert angles_res["houses"][0]["sign"] == "Aries"
+    assert angles_res["houses"][1]["sign"] == "Taurus"
+    assert angles_res["houses"][9]["sign"] == "Capricorn"
+
+
+def test_aspect_exponential_decay_weighting():
+    """
+    Strict Guardrail #3: Continuous Exponential Decay Weighting W(delta) = 10.0 * exp(-1.4 * delta).
+    """
+    from backend.app.astro.aspects import calculate_aspect_weight, calculate_aspects
+
+    # Exact aspect (delta = 0) -> W = 10.0
+    w_exact = calculate_aspect_weight(0.0)
+    assert math.isclose(w_exact, 10.0, abs_tol=1e-3)
+
+    # 1.0 degree orb delta -> W = 10.0 * exp(-1.4) = 2.46597
+    w_1deg = calculate_aspect_weight(1.0)
+    assert math.isclose(w_1deg, 2.4660, abs_tol=1e-3)
+
+    # 3.0 degree orb delta -> W = 10.0 * exp(-4.2) = 0.14995
+    w_3deg = calculate_aspect_weight(3.0)
+    assert math.isclose(w_3deg, 0.1500, abs_tol=1e-3)
+
+    # Test pair aspect detection
+    sample_planets = {
+        "SUN": {"longitude": 0.0, "speed_deg_per_day": 0.98},
+        "MOON": {"longitude": 120.5, "speed_deg_per_day": 12.2},  # Trine with 0.5 deg orb
+        "MARS": {"longitude": 89.2, "speed_deg_per_day": 0.65}    # Square with 0.8 deg orb
+    }
+    aspects = calculate_aspects(sample_planets)
+    assert len(aspects) >= 2
+    assert aspects[0]["aspect_type"] in ["TRINE", "SQUARE"]
+
+
+def test_vedic_sidereal_and_nakshatras():
+    """
+    Strict Guardrail #2: Sidereal (Lahiri) calculations, 27 Nakshatras & Pada.
+    """
+    from backend.app.astro.vedic import (
+        calculate_lahiri_ayanamsha,
+        calculate_nakshatra_and_pada,
+        calculate_sidereal_chart
+    )
+
+    # Lahiri Ayanamsha at J2000 (JD 2451545.0)
+    ayanamsha_2000 = calculate_lahiri_ayanamsha(2451545.0)
+    assert math.isclose(ayanamsha_2000, 23.85306, abs_tol=1e-3)
+
+    # Moon in Jakarta 2000-01-01 was at tropical 219.81485
+    # Sidereal = 219.81485 - 23.85306 = 195.96179 (Libra)
+    # Must be in Swati Nakshatra, Pada 3, Ruled by RAHU
+    nak_info = calculate_nakshatra_and_pada(195.96179)
+    assert nak_info["nakshatra_name"] == "Swati"
+    assert nak_info["pada"] == 3
+    assert nak_info["nakshatra_ruler"] == "RAHU"
+
+
+def test_vimshottari_dasha_calculation():
+    """
+    Vedic Vimshottari Dasha 120-year hierarchical timeline.
+    """
+    from backend.app.astro.vedic import calculate_vimshottari_dasha
+    from datetime import datetime
+
+    birth_dt = datetime(2000, 1, 1, 5, 0, 0)
+    moon_sidereal = 195.96179  # Swati (Rahu)
+
+    dasha_timeline = calculate_vimshottari_dasha(moon_sidereal, birth_dt)
+
+    assert len(dasha_timeline) == 9
+    assert dasha_timeline[0]["mahadasha"] == "RAHU"
+    assert dasha_timeline[0]["is_partial_at_birth"] is True
+    # Next Dasha after Rahu is Jupiter (16 years)
+    assert dasha_timeline[1]["mahadasha"] == "JUPITER"
+    assert dasha_timeline[1]["duration_years"] == 16.0
+

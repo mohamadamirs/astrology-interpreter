@@ -6,4 +6,4 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 export PYTHONPATH="${PROJECT_ROOT}"
 
 echo "🧪 Menjalankan Astrology-Interpreter Benchmark Test Suite..."
-/root/.venvs/astrology/bin/python -m pytest -v "${PROJECT_ROOT}/backend/tests/test_golden_accuracy.py" "$@"
+/root/.venvs/astrology/bin/python -m pytest -v "${PROJECT_ROOT}/backend/tests" "$@"
