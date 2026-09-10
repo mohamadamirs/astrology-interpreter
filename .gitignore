@@ -32,7 +32,11 @@ npm-debug.*
 yarn-debug.*
 yarn-error.*
 
-# OS
+# OS & Local Databases
 .DS_Store
 Thumbs.db
 *.log
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/
